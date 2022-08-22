@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  width: 100%;
+  padding: 10px 0;
+}
+
+.header > div {
+  padding: 12px;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header__logo > img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.header__logo > span {
+  color: gray;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 16px;
+}
+
+/* .header__searchContainer {
+  width: 300px;
+  padding: 8px;
+  background-color: red;
+} */
+
+.header__searchBar {
+  width: 20%;
+  /* height: 120%; */
+  border-radius: 10px;
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  align-items: center;
+  /* padding: 0 0px; */
+}
+
+.MuiSvgIcon-root {
+  color: rgb(82, 82, 82);
+}
+
+.header__searchBar > input {
+    /* flex: 1; */
+  /* height: 50%; */
+  font-size: 16px;
+  color: lightgray;
+  background: none;
+  border: none;
+  margin-left: 12px;
+}
+
+.header__searchBar > input:focus {
+  outline: none;
+  color: black;
+}
+
+.header__icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: -30px;
+  float: right !important;
+}
+
+.header__icons .MuiSvgIcon-root {
+  font-size: 28px;
+  color: rgb(82, 82, 82);
+  margin: 4px;
+}
+
+.header__icons > span {
+  margin-right: 20px;
+}
+
+.header__icons > img {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: contain;
+  margin-left: 5px;
+}
