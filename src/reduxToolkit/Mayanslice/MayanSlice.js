@@ -12,7 +12,7 @@ export const getAllDocs = createAsyncThunk("allDocs", async () => {
     const { data } = await axios.get(
       "http://152.228.211.15:8000/api/attachment/filteredBy/?model=courseAssessmentMethod&resource_id=5"
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);

@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import "./FileCard.css";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
-import PDF from "../../media/images.png";
-import { Avatar } from "@material-ui/core";
 import Swal from "sweetalert2";
 import DeleteIcon from "@material-ui/icons/Delete";
 import red from "@material-ui/core/colors/red";
 import { Document, Page, pdfjs } from "react-pdf";
-import DropFileInput from "../drop-file-input/DropFileInput";
-import { Link } from "react-router-dom";
-
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const FileCard = ({ el }) => {
@@ -34,9 +28,9 @@ const FileCard = ({ el }) => {
     setNumPages(numPages);
     setPageNumber(1);
   }
-  function changePage(offset) {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
-  }
+  // function changePage(offset) {
+  //   setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  // }
   // function previousPage() {
   //   changePage(-1);
   // }
@@ -45,21 +39,21 @@ const FileCard = ({ el }) => {
   // }
   return (
     <>
-      {el.document ? (
+      {el.document && (
         <div className="fileCard">
-          <a target="_blank" href={`${el.document}`}>
+          <a target="_blank" rel="noreferrer" href={`${el.document}`}>
             <Document file={el.document} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page height="200" width="200" pageNumber={pageNumber} />
+              <Page
+                 height="200"
+                width="200"
+                pageNumber={pageNumber}
+              />
             </Document>
           </a>
           <span className="drop-file-preview__item__del" onClick={handelDel}>
             <DeleteIcon style={{ color: red[600] }} />
           </span>
         </div>
-      ) : (
-        <>
-          <DropFileInput />
-        </>
       )}
     </>
   );

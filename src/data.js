@@ -1,51 +1,77 @@
-export const data1 = [
+export const evidance = [
   {
     id: 1,
-    name: "Exam",
+    name: "Exam 1",
   },
   {
     id: 2,
-    name: "Controle_continu",
+    name: "Exam 2",
   },
   {
     id: 3,
-    name: "Quiz",
+    name: "Exam 3",
   },
 ];
-
-export const data = [
+export const EvidanceType = [
+  {
+    id: 1,
+    name: "Exam Paper",
+    examId: 1,
+  },
+  {
+    id: 2,
+    name: "correction Exam",
+    examId: 1,
+  },
+  {
+    id: 3,
+    name: "Best mark",
+    examId: 2,
+  },
+  {
+    id: 4,
+    name: "Bad mark",
+    examId: 3,
+  },
+];
+export const Docs = [
   {
     id: 1,
     code: "025",
     document:
       "http://152.228.211.15:8000/media/documents/guide-entretien-ingenieur.pdf",
-    evidancetype_id: 1,
+    evidancetypeid: 1,
+    examId: 1,
   },
   {
     id: 2,
     code: "028",
     document:
       "http://152.228.211.15:8000/media/documents/guide-entretien-ingenieur.pdf",
-    evidancetype_id: 1,
+    evidancetypeid: 1,
+    examId: 1,
   },
   {
     id: 3,
     code: "125",
     document:
       "http://152.228.211.15:8000/media/documents/guide-entretien-ingenieur.pdf",
-    evidancetype_id: 2,
+    evidancetypeid: 4,
+    examId: 3,
   },
   {
     id: 4,
     code: "655",
     document:
       "http://152.228.211.15:8000/media/documents/guide-entretien-ingenieur.pdf",
-    evidancetype_id: 2,
+    evidancetypeid: 2,
+    examId: 3,
   },
   {
     id: 5,
     code: "175",
     document: "",
-    evidancetype_id: 3,
+    evidancetypeid: 3,
+    examId: 2,
   },
 ];
