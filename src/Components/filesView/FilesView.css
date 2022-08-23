@@ -3,34 +3,35 @@
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
 }
 .fileView1 {
-  margin: 12px;
-  width: 40%;
-  height: 65vh;
-  background-color: rgba(173, 216, 230, 0.10);
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  width: 42%;
+  height: 450px;
+  background-color: rgba(173, 216, 230, 0.1);
+  border: 1px solid black;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  /* background-color: red; */
 }
 .fileViewhead {
-  padding: 0 35px ;
+  padding: 0 35px;
   width: 100%;
+  height: 110px;
   display: flex;
   justify-content: space-between !important;
   align-items: center;
   flex-direction: row;
-  /* background-color: red; */
 }
-.tit{
+.fileViewcontent {
+  height: 330px;
+  width: 100%;
+  padding: 10px;
+}
+.tit {
   letter-spacing: 1px;
   text-transform: capitalize;
- }
+}
 .newFilebtn1 {
   display: flex;
   justify-content: center !important;
@@ -49,28 +50,4 @@
   font-size: 15px !important;
   font-weight: bold;
   padding-top: 10px;
-}
-.fileViewbody {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.fileView__titles {
-  display: flex;
-  margin-bottom: 5px;
-  color: rgb(85, 78, 78);
-}
-
-.fileView__titles > div > * {
-  margin: 5px;
-}
-
-.fileView__titles--left {
-  flex: 1;
-}
-
-.fileView__titles--right {
-  display: flex;
 }

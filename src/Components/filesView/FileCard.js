@@ -8,6 +8,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import red from "@material-ui/core/colors/red";
 import { Document, Page, pdfjs } from "react-pdf";
 import DropFileInput from "../drop-file-input/DropFileInput";
+import { Link } from "react-router-dom";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const FileCard = ({ el }) => {
@@ -41,46 +43,15 @@ const FileCard = ({ el }) => {
   // function nextPage() {
   //   changePage(1);
   // }
-  // const onClick1 = (element) => {
-  //   document.getElementById("img01").src = element;
-  //   document.getElementById("img01").style.display = "flex";
-  //   document.getElementById("img01").style.justifyContent = "center";
-  //   document.getElementById("img01").style.alignItems = "center";
-  //   document.getElementById("img01").style.width = "50%";
-  //   document.getElementById("img01").style.height = "50%";
-  //   document.getElementById("img01").style.marginLeft = "25%";
-  //   document.getElementById("img01").style.borderRadius = "30%";
-  //   document.getElementById("modal01").style.display = "block";
-  //   document.getElementById("modal01").style.zIndex = "999";
-  //   document.getElementById("modal01").style.display = "flex";
-  //   document.getElementById("modal01").style.justifyContent = "center";
-  //   document.getElementById("modal01").style.alignItems = "center";
-  //   document.getElementById("modal01").style.padding = "auto";
-  // };
-  // const onClick2 = () => {
-  //   document.getElementById("modal01").style.display = "none";
-  // };
   return (
     <>
       {el.document ? (
         <div className="fileCard">
-          <div className="fileCard--top">
+          <a target="_blank" href={`${el.document}`}>
             <Document file={el.document} onLoadSuccess={onDocumentLoadSuccess}>
-              <Page height="230" width="230" pageNumber={pageNumber} />
+              <Page height="200" width="200" pageNumber={pageNumber} />
             </Document>
-          </div>
-          <div className="fileCard--bottom">
-            <Avatar className="imgs" src={PDF} alt="User Photo" />
-            <a
-              // data-title={el.name.length > 20 && el.name}
-              href={el.document}
-              target="_blank"
-              className="links"
-            >
-              {el.name && el.name.substring(0, 20)}
-              {el.name && el.name.length > 20 && "..."}
-            </a>
-          </div>
+          </a>
           <span className="drop-file-preview__item__del" onClick={handelDel}>
             <DeleteIcon style={{ color: red[600] }} />
           </span>

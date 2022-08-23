@@ -1,13 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, lazy, Suspense } from "react";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import { getAllDocs } from "./reduxToolkit/Mayanslice/MayanSlice";
-import FilesView from "./Components/filesView/FilesView";
 import { Route, Routes } from "react-router-dom";
-import Evidance from "./Components/evidance/Evidance";
+import Loader from "./Components/Loader/Loader";
+const Component1 = lazy(() => import("./Components/evidance/Evidance"));
+const Component2 = lazy(() => import("./Components/filesView/FilesView"));
+
 function App() {
   const dispatch = useDispatch();
-  const docs = useSelector((state) => state.MayanDoc.allDocuments);
+  // const docs = useSelector((state) => state.MayanDoc.allDocuments);
   useEffect(() => {
     dispatch(getAllDocs());
   }, [dispatch]);
@@ -15,10 +17,12 @@ function App() {
   return (
     <div className="App">
       <div className="app__main">
-        <Routes>
-          <Route exact path="/" element={<Evidance />} />
-          <Route path="/" element={<FilesView />} />
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route exact path="/" element={<Component1 />} />
+            <Route path="/:name/:id" element={<Component2 />} />
+          </Routes>
+        </Suspense>                 
       </div>
     </div>
   );

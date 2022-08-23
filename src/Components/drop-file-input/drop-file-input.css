@@ -1,14 +1,12 @@
 .drop-file-input {
   position: relative;
   width: 400px;
-  height: 366.5px;
-  border: 2px dashed var(--border-color);
-  border-radius: 15px;
+  height: 200px;
+  border: 2px dashed black  ;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom-left-radius: 0% !important;
-  border-bottom-right-radius: 0 !important;
   background-color: var(--input-bg);
 }
 
@@ -93,7 +91,7 @@
 }
 
 .btn {
-  background-color: lightgray;
+  /* background-color: lightgray; */
   float: right;
   padding-top: 25px;
 }

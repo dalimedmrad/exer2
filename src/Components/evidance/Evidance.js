@@ -1,4 +1,3 @@
-import { Avatar } from "antd";
 import React from "react";
 import { data1 } from "../../data";
 import "./evidance.css";
@@ -7,14 +6,12 @@ const Evidance = () => {
   return (
     <div className="evidance">
       {data1.map((el) => (
-        <div className="CardeEvid">
-          <div className="links">
-            <Link to="">
-              {el.name && el.name.substring(0, 20)}
-              {el.name && el.name.length > 20 && "..."}
-            </Link>
+        <Link className="links1" to={`/${el.name}/${el.id}`}>
+          <div className="CardeEvid">
+            {el.name && el.name.substring(0, 20)}
+            {el.name && el.name.length > 20 && "..."}
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
